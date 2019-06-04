@@ -11,10 +11,10 @@
     <div id="game">
         <h1> The Psychic Game </h1>
         <p>Guess what letter I'm thinking of!</p>
-        <p>Wins:</p>
-        <p>Losses:</p>
-        <p>Guesses Left:</p>
-        <p>Your Guesses so far:</p>
+        <p id='wins'>Wins:</p>
+        <p id='losses'>Losses:</p>
+        <p id='guesses'>Guesses Left:</p>
+        <p id='userGuesses'>Your Guesses so far:</p>
     </div>
 
     <script type="text/javascript">
@@ -26,24 +26,22 @@
 
         var wins = 0;
         var losses = 0;
-        var guesses = 9;
         var guessesLeft = 9;
         var guessedLetters = [];
-        var letterToGuess = null;
 
         var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
-
+  
 
         //Reset the function when guesses run out
 
         var reset = function() {
-            totalGuesses = 9;
             guessesLeft = 9;
             guessedLetters = [];
-
-            updateLetterToGuess();
-            updateGuessesLeft();
-            updateGuessesSoFar();
+            computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+  
+            // updateLetterToGuess();
+            // updateGuessesLeft();
+            // updateGuessesSoFar();
         }
 
         //Enable user to press key for letter string
@@ -55,13 +53,13 @@
             //Create a string of letters
 
             guessedLetters.push(userGuess);
-            updateGuessesLeft();
-            updateGuessesSoFar();
-
+            console.log(guessesLeft)
+            console.log(userGuess)
+            console.log(computerGuess)
             //if the user's guess is the hidden letter then the user wins
 
             if (guessesLeft > 0) {
-                if (userGuess == letterToGuess) {
+                if (userGuess === computerGuess) {
                     wins++;
                     document.querySelector('#wins').innerHTML = "Wins:" + wins;
                     reset();
@@ -74,10 +72,10 @@
                 reset();
             }
 
-
-            //document.getElementById('wins').innerHTML = "Wins: " + wins;
-            //document.getElementById('losses').innerHTML = "losses: " + losses;
-            //document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
+            document.getElementById('wins').innerHTML = "Wins: " + wins;
+            document.getElementById('losses').innerHTML = "losses: " + losses;
+            document.getElementById('guesses').innerHTML = "Guesses left: " + guessesLeft;
+            document.getElementById('userGuesses').innerHTML = "Your Guesses so far: " + guessedLetters;
         };
     </script>
 
