@@ -1,0 +1,28 @@
+body {
+    background-image: url("https://www.monsterchildren.com/wp-content/uploads/2018/04/monster-children-psychic-1068x571.jpg");
+    background-size: cover;
+    margin: 0px 40px;
+}
+
+h1 {
+    color: white;
+    font-weight: bold;
+    font-family: 'Pacifico', cursive;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    background-color: lightpink;
+    opacity: .5;
+    position: relative;
+    width: 250px;
+}
+
+p {
+    font-family: 'Fresca', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+}

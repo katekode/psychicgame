@@ -3,14 +3,23 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fresca&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+
     <title>Psychic Game</title>
 </head>
 
 <body>
 
     <div id="game">
-        <h1> The Psychic Game </h1>
+        <div class="header">
+            <h1> The Psychic Game </h1>
+        </div>
+        <br>
         <p>Guess what letter I'm thinking of!</p>
+        <br>
         <p id='wins'>Wins:</p>
         <p id='losses'>Losses:</p>
         <p id='guesses'>Guesses Left:</p>
@@ -30,7 +39,7 @@
         var guessedLetters = [];
 
         var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
-  
+
 
         //Reset the function when guesses run out
 
@@ -38,7 +47,7 @@
             guessesLeft = 9;
             guessedLetters = [];
             computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
-  
+            console.log(computerGuess);
             // updateLetterToGuess();
             // updateGuessesLeft();
             // updateGuessesSoFar();
@@ -56,7 +65,7 @@
             console.log(guessesLeft)
             console.log(userGuess)
             console.log(computerGuess)
-            //if the user's guess is the hidden letter then the user wins
+                //if the user's guess is the hidden letter then the user wins
 
             if (guessesLeft > 0) {
                 if (userGuess === computerGuess) {
